@@ -4,21 +4,17 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {CarouselComponent} from "./carousel/carousel.component";
-import {CarouselSlideComponent} from "./carousel/carousel-slide.component";
-import {CarouselSlideDataComponent} from "./carousel/carousel-slide-data.component";
+import {Ng2ResponsiveCarouselModule} from "./modules/ng2-responsive-carousel/ng2-responsive-carousel.module";
 
 @NgModule({
     declarations: [
-        AppComponent,
-        CarouselComponent,
-        CarouselSlideComponent,
-        CarouselSlideDataComponent
+        AppComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        Ng2ResponsiveCarouselModule
     ],
     providers: [],
     bootstrap: [AppComponent]

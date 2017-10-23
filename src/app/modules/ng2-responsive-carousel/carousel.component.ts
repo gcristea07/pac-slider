@@ -1,8 +1,8 @@
-import {AfterContentInit, Component, HostListener, Input, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {AfterContentInit, Component, Input, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {CarouselSlideDataComponent} from "./carousel-slide-data.component";
 
 @Component({
-    selector: 'app-carousel',
+    selector: 'ng2-responsive-carousel',
     templateUrl: './carousel.component.html',
     styleUrls: ['./carousel.component.css']
 })

@@ -2,7 +2,7 @@ import {Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild} f
 import {CarouselComponent} from "./carousel.component";
 
 @Component({
-    selector: 'app-carousel-slide',
+    selector: 'ng2-carousel-slide',
     templateUrl: './carousel-slide.component.html',
     styleUrls: ['./carousel-slide.component.css']
 })

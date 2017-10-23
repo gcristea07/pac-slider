@@ -2,7 +2,7 @@ import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {CarouselComponent} from "./carousel.component";
 
 @Component({
-    selector: 'app-carousel-slide-data',
+    selector: 'ng2-carousel-slide-data',
     templateUrl: './carousel-slide-data.component.html',
     styleUrls: ['./carousel-slide-data.component.css']
 })
