@@ -1,0 +1,14 @@
+<div class="carousel-container" #sliderContainer>
+    <div class="arrow left-arrow" (click)="slideBack()" (mouseenter)="pauseAutoPlay()">
+        <img src="assets/arrow-left.svg">
+    </div>
+    <div class="slides-zone" #slidesZone>
+        <ng-content></ng-content>
+        <div class="images-container" (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()" #slideImg>
+
+        </div>
+    </div>
+    <div class="arrow right-arrow" (click)="slideForward()" (mouseenter)="pauseAutoPlay()">
+        <img src="assets/arrow-right.svg">
+    </div>
+</div>
