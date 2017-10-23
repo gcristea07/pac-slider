@@ -1,0 +1,1 @@
+export * from './src/app/modules/ng2-responsive-carousel/ng2-responsive-carousel.module';
