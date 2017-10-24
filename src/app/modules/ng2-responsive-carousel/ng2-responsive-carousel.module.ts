@@ -9,7 +9,7 @@ import {CarouselSlideDataComponent} from "./carousel-slide-data.component";
         CommonModule
     ],
     declarations: [CarouselComponent, CarouselSlideComponent, CarouselSlideDataComponent],
-    exports:[CarouselComponent, CarouselSlideComponent]
+    exports:[CarouselComponent, CarouselSlideComponent,CarouselSlideDataComponent]
 })
 export class Ng2ResponsiveCarouselModule {
 }
