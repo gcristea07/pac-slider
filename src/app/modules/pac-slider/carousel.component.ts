@@ -1,54 +1,66 @@
-import {AfterContentInit, Component, Input, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {
+    AfterContentInit, Component, ComponentFactoryResolver, Input, OnDestroy,
+    ViewChild, ViewContainerRef
+} from '@angular/core';
 import {CarouselItemComponent} from "./carousel-item.component";
+import {SlideZoneDirective} from "./slide-zone.directive";
+import {CarouselSlideComponent} from "./carousel-slide.component";
+import {Location} from "@angular/common";
+import {Router} from "@angular/router";
+
+const STATE_AVAILABLE = 'available';
+const STATE_IDLE = 'idle';
 
 @Component({
     selector: 'pac-slider',
     templateUrl: './carousel.component.html',
     styleUrls: ['./carousel.component.css']
 })
-export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
+export class CarouselComponent implements AfterContentInit, OnDestroy {
 
-    @Input() private autoPlay = true;
-    @Input() private time = 4;
+    @Input()
+    private autoPlay = true;
 
-    @ViewChild('sliderContainer') private sliderContainer;
-    @ViewChild('slidesZone') private slidesZone;
-    @ViewChild('slideImg') private slideImg;
+    @Input()
+    private time = 4;
 
-    public slides: Array<CarouselItemComponent> = [];
-    public htmlSlides: Array<any> = [];
+    @ViewChild('slidesZone')
+    private slidesZone;
 
-    private index = 0;
+    @ViewChild('sliderContainer')
+    private sliderContainer;
+
+    @ViewChild(SlideZoneDirective)
+    private slideZone: SlideZoneDirective;
+
+    private slides: Array<CarouselItemComponent> = [];
+
+    private viewContainerRef: ViewContainerRef;
+
+    private carouselSlides: Array<CarouselSlideComponent> = [];
+
+
+    private state = STATE_AVAILABLE;
     private lastOffset = 0;
-
-    private states = {available: 'available', idle: 'idle'};
-    private state = this.states.available;
     private interval;
     private pause;
 
-    constructor(private renderer: Renderer2) {
-    }
-
-    ngOnInit() {
+    constructor(private componentFactoryResolver: ComponentFactoryResolver,
+                private test: ViewContainerRef) {
+        console.log(test);
     }
 
     ngAfterContentInit() {
+        this.viewContainerRef = this.slideZone.viewContainerRef;
+
         this.slides.forEach(slide => {
-            const htmlElement = this.renderer.createElement('div');
-            this.renderer.addClass(htmlElement, 'image-container');
+            let componentFactory = this.componentFactoryResolver.resolveComponentFactory(CarouselSlideComponent);
+            let componentRef = this.viewContainerRef.createComponent(componentFactory);
+            componentRef.instance.src = slide.src;
+            componentRef.instance.route = slide.route;
+            componentRef.instance.link = slide.link;
+            this.carouselSlides.push(componentRef.instance);
 
-            const htmlLink = this.renderer.createElement('a');
-            if (slide.link) {
-                this.renderer.setAttribute(htmlLink, 'href', slide.link);
-            }
-
-            const htmlImage = this.renderer.createElement('img');
-            this.renderer.setAttribute(htmlImage, 'src', slide.src);
-
-            this.renderer.appendChild(htmlElement, htmlLink);
-            this.renderer.appendChild(htmlLink, htmlImage);
-            this.renderer.appendChild(this.slideImg.nativeElement, htmlElement);
-            this.htmlSlides.push(htmlElement);
         });
 
         if (this.autoPlay) {
@@ -84,30 +96,22 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     }
 
     slideBack() {
-        if (this.state === this.states.available) {
-            this.state = this.states.idle;
-            if (this.index === 0) {
-                this.index = this.htmlSlides.length;
-            }
-            this.index--;
-            this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
-            this.renderer.insertBefore(
-                this.slideImg.nativeElement,
-                this.htmlSlides[this.index],
-                this.slideImg.nativeElement.children[0]);
-            this.htmlSlides.forEach((htmlSlide) => {
-                this.renderer.removeClass(htmlSlide, 'delay');
-                this.renderer.setStyle(htmlSlide, 'transform', 'translate3d(' + this.lastOffset + 'px, 0, 0)');
-            });
+        if (this.state === STATE_AVAILABLE) {
+            this.state = STATE_IDLE;
 
+            let ref = this.viewContainerRef.get(this.carouselSlides.length - 1);
+            this.viewContainerRef.move(ref, 0);
+            this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
+            this.carouselSlides.forEach((slide) => {
+                slide.stabilizes(this.lastOffset)
+            });
             this.lastOffset += this.sliderContainer.nativeElement.getBoundingClientRect().width;
-            this.htmlSlides.forEach((htmlSlide) => {
-                this.renderer.addClass(htmlSlide, 'delay');
-                this.renderer.setStyle(htmlSlide, 'transform', 'translate3d(' + this.lastOffset + 'px, 0, 0)');
+            this.carouselSlides.forEach((slide) => {
+                slide.slide(this.lastOffset)
             });
 
             setTimeout(() => {
-                this.state = this.states.available;
+                this.state = STATE_AVAILABLE;
             }, 720);
             setTimeout(() => {
                 this.pause = false;
@@ -117,28 +121,24 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     }
 
     slideForward() {
-        if (this.state === this.states.available) {
-            this.state = this.states.idle;
-            this.index++;
-            if (this.index > this.htmlSlides.length) {
-                this.index = 1;
-            }
+        if (this.state === STATE_AVAILABLE) {
+            this.state = STATE_IDLE;
+
             this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
-            this.htmlSlides.forEach((htmlSlide) => {
-                this.renderer.addClass(htmlSlide, 'delay');
-                this.renderer.setStyle(htmlSlide, 'transform', 'translate3d(' + this.lastOffset + 'px, 0, 0)');
+            this.carouselSlides.forEach((slide) => {
+                slide.slide(this.lastOffset)
             });
 
             setTimeout(() => {
-                this.renderer.removeChild(this.slideImg.nativeElement, this.slideImg.nativeElement.children[0]);
-                this.renderer.appendChild(this.slideImg.nativeElement, this.htmlSlides[this.index - 1]);
+                let ref = this.viewContainerRef.get(0);
+                this.viewContainerRef.move(ref, this.carouselSlides.length - 1);
                 this.lastOffset = 0;
-                this.htmlSlides.forEach((htmlSlide) => {
-                    this.renderer.removeClass(htmlSlide, 'delay');
-                    this.renderer.setStyle(htmlSlide, 'transform', 'translate3d(' + this.lastOffset + 'px, 0, 0)');
+                this.carouselSlides.forEach((slide) => {
+                    slide.stabilizes(this.lastOffset)
                 });
-                this.state = this.states.available;
+                this.state = STATE_AVAILABLE;
             }, 720);
         }
+
     }
 }

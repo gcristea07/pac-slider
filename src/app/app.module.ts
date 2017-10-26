@@ -25,8 +25,7 @@ const appRoutes: Routes = [
         HttpModule,
         PacSliderModule,
         RouterModule.forRoot(
-            appRoutes,
-            { enableTracing: true } // <-- debugging purposes only
+            appRoutes
         )
     ],
     providers: [],

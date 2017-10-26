@@ -9,6 +9,7 @@ import {CarouselComponent} from "./carousel.component";
 export class CarouselItemComponent implements OnInit, OnDestroy {
     @Input() src;
     @Input() link;
+    @Input() route;
 
     constructor(private parent: CarouselComponent) {
         parent.addSlideData(this);

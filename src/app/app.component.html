@@ -1,7 +1,12 @@
 <router-outlet></router-outlet>
 
-<pac-slider [autoPlay]="true" [time]="4">
-    <pac-item *ngFor="let a of [1,2,3,4]"
+<pac-slider [autoPlay]="true" [time]="5">
+    <pac-item
+            [route]="'/page2'"
             [src]="'http://www.harrison-drury.com/wp-content/uploads/2014/07/HD-slider-images_hd-start-up-980x400.jpg'">
+    </pac-item>
+    <pac-item [src]="'https://www.childrensmuseum.org/sites/default/files/ExhibitsIconsPlaces_Carousel_Large_003.jpg'">
+    </pac-item>
+    <pac-item [src]="'http://wowslider.com/sliders/demo-11/data/images/krasivyi_korabl_-1024x768.jpg'">
     </pac-item>
 </pac-slider>

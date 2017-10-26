@@ -4,8 +4,10 @@
     </div>
     <div class="slides-zone" #slidesZone>
         <ng-content></ng-content>
-        <div class="images-container" (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()" #slideImg>
+        <div class="images-container"  (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()" #slideImg>
+            <ng-template slideZone>
 
+            </ng-template>
         </div>
     </div>
     <div class="arrow right-arrow" (click)="slideForward()" (mouseenter)="pauseAutoPlay()">
