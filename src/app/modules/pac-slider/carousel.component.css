@@ -45,10 +45,11 @@
 }
 
 .image-container.delay {
-    -webkit-transition: transform .7s ease-in;
-    -moz-transition: transform .7s ease-in;
-    -o-transition: transform .7s ease-in;
-    transition: transform .7s ease-in;
+    -webkit-transition: transform .7s ease-in-out;
+    -moz-transition: transform .7s ease-in-out;
+    -o-transition: transform .7s ease-in-out;
+    transition: transform .7s ease-in-out;
+    /*by nea adi*/
 }
 
 .carousel-container .arrow {

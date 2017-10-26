@@ -1,8 +1,8 @@
 import {AfterContentInit, Component, Input, OnDestroy, OnInit, Renderer2, ViewChild} from '@angular/core';
-import {CarouselSlideDataComponent} from "./carousel-slide-data.component";
+import {CarouselItemComponent} from "./carousel-item.component";
 
 @Component({
-    selector: 'ng2-responsive-carousel',
+    selector: 'pac-slider',
     templateUrl: './carousel.component.html',
     styleUrls: ['./carousel.component.css']
 })
@@ -15,7 +15,7 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     @ViewChild('slidesZone') private slidesZone;
     @ViewChild('slideImg') private slideImg;
 
-    public slides: Array<CarouselSlideDataComponent> = [];
+    public slides: Array<CarouselItemComponent> = [];
     public htmlSlides: Array<any> = [];
 
     private index = 0;
@@ -38,7 +38,7 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
             this.renderer.addClass(htmlElement, 'image-container');
 
             const htmlLink = this.renderer.createElement('a');
-            if(slide.link){
+            if (slide.link) {
                 this.renderer.setAttribute(htmlLink, 'href', slide.link);
             }
 
@@ -67,11 +67,11 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
         }
     }
 
-    addSlideData(slide: CarouselSlideDataComponent) {
+    addSlideData(slide: CarouselItemComponent) {
         this.slides.push(slide);
     }
 
-    removeSlide(slide: CarouselSlideDataComponent) {
+    removeSlide(slide: CarouselItemComponent) {
 
     }
 
