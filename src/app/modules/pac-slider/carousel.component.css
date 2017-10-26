@@ -1,114 +1,183 @@
 .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
 
 }
 
 .images-container {
-    width: 100%;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    transition: all 300ms cubic-bezier(0.35, 0, 0.25, 1);
+	width: 100%;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	transition: all 300ms cubic-bezier(0.35, 0, 0.25, 1);
 }
 
 .image-container {
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    display: inline-table;
-    overflow: hidden;
-    flex: 1;
-    text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
-    -webkit-align-items: flex-end;
-    -ms-flex-align: end;
-    align-items: flex-end;
-    -webkit-align-content: flex-end;
-    -ms-flex-line-pack: end;
-    align-content: flex-end;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	display: inline-table;
+	overflow: hidden;
+	flex: 1;
+	text-transform: uppercase;
+	position: relative;
+	cursor: pointer;
+	-webkit-align-items: flex-end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	-webkit-align-content: flex-end;
+	-ms-flex-line-pack: end;
+	align-content: flex-end;
 }
 
 .image-container img {
-    width: 100%;
+	width: 100%;
 }
 
 .image-container.delay {
-    -webkit-transition: transform .7s ease-in-out;
-    -moz-transition: transform .7s ease-in-out;
-    -o-transition: transform .7s ease-in-out;
-    transition: transform .7s ease-in-out;
-    /*by nea adi*/
+	-webkit-transition: transform .7s ease-in-out;
+	-moz-transition: transform .7s ease-in-out;
+	-o-transition: transform .7s ease-in-out;
+	transition: transform .7s ease-in-out;
+	/*by nea adi*/
 }
 
 .carousel-container .arrow {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 7%;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-align-content: stretch;
-    -ms-flex-line-pack: stretch;
-    align-content: stretch;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 4%;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 
 }
 
 .carousel-container .arrow img {
-    width: 100%;
-    -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 0 1 auto;
-    -ms-flex: 0 1 auto;
-    flex: 0 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
+	width: 100%;
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
 }
 
 .carousel-container .left-arrow {
-    left: 0;
-}
-
-.carousel-container .left-arrow:hover {
-    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1); /* IE6-9 */
+	-webkit-transition: all .6s ease-out;
+	-moz-transition: all .6s ease-out;
+	-o-transition: all .6s ease-out;
+	transition: all .6s ease-out;
+	left: 0;
+	cursor: pointer;
 }
 
 .carousel-container .right-arrow {
-    right: 0;
-    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=1); /* IE6-9 */
+	right: 0;
+	cursor: pointer;
+}
+/*
+.carousel-container .left-arrow:hover {
+	background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* FF3.6-15 *!
+	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* Chrome10-25,Safari5.1-6 *!
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1); !* IE6-9 *!
 }
 
+.carousel-container .right-arrow:hover {
+	background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); !* FF3.6-15 *!
+	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); !* Chrome10-25,Safari5.1-6 *!
+	background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=1); !* IE6-9 *!
+}*/
 
+.carousel-container .dots-container {
+	z-index: 2;
+	position: absolute;
+	bottom: 0;
+	height: 10%;
+	width: 100%;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+.carousel-container .dots-container ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.carousel-container .dots-container ul li {
+	display: inline;
+}
+
+.carousel-container .dots-container ul li img {
+	width: 10px;
+	padding: 5px;
+}
+
+.carousel-container .dots-container img {
+	cursor: pointer;
+	height: 10%;
+	width: 100%;
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
+}
+
+.carousel-container .dots-container img:hover {
+	opacity: 0.5;
+	transition: all .7s ease-out;
+}
