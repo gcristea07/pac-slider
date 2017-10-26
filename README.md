@@ -1,4 +1,4 @@
-# Ng2ResponsiveCarousel
+# PAC-Slider
 
 ## Initial commit
 
