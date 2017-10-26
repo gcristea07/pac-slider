@@ -103,11 +103,11 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
             this.viewContainerRef.move(ref, 0);
             this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
             this.carouselSlides.forEach((slide) => {
-                slide.stabilizes(this.lastOffset)
+                slide.stabilizes(this.lastOffset);
             });
             this.lastOffset += this.sliderContainer.nativeElement.getBoundingClientRect().width;
             this.carouselSlides.forEach((slide) => {
-                slide.slide(this.lastOffset)
+                slide.slide(this.lastOffset);
             });
 
             setTimeout(() => {
@@ -126,7 +126,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
             this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
             this.carouselSlides.forEach((slide) => {
-                slide.slide(this.lastOffset)
+                slide.slide(this.lastOffset);
             });
 
             setTimeout(() => {
@@ -134,7 +134,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
                 this.viewContainerRef.move(ref, this.carouselSlides.length - 1);
                 this.lastOffset = 0;
                 this.carouselSlides.forEach((slide) => {
-                    slide.stabilizes(this.lastOffset)
+                    slide.stabilizes(this.lastOffset);
                 });
                 this.state = STATE_AVAILABLE;
             }, 720);
