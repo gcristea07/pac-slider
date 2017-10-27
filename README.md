@@ -10,12 +10,13 @@
 
 
 ## Table of contents
+* [Quick Start](#quick-start)
 * [Install](##install)
 * [Usage](#usage)
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
-## Install
+##Install
 
 Quick download methods available: 
 
