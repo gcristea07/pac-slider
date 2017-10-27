@@ -10,13 +10,12 @@
 
 
 ## Table of contents
-* [Quick Start](#quick-start)
-* [Install](##install)
+* [Install](#install)
 * [Usage](#usage)
 * [Creators](#creators)
 * [Copyright and license](#copyright-and-license)
 
-##Install
+## Install
 
 Quick download methods available: 
 
@@ -24,7 +23,7 @@ Quick download methods available:
 - Clone the repo: clone `https://github.com/twbs/bootstrap.git`
 - Install with [npm](https://www.npmjs.com/): `npm install pac-slider`
 
-##Usage
+## Usage
     autoPlay = {
         type:boolean,
         required:false,
