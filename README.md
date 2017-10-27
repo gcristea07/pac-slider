@@ -1,7 +1,7 @@
 # Pac-slider
 Angular 2/4 responsive carousel
-##Getting Started
-##Installing
+## Getting Started
+## Installing
     npm install pac-slider
 ## Usage
     autoPlay = {
