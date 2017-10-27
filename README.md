@@ -7,11 +7,11 @@
 * [Creator](#creators)
 
 
-##Quick Start
+## Quick Start
 
 
 
-##Install
+## Install
 
 Quick download methods available: 
 
@@ -19,7 +19,8 @@ Quick download methods available:
 - Clone the repo: clone `https://github.com/twbs/bootstrap.git`
 - Install with [npm](https://www.npmjs.com/): `npm install pac-slider`
 
-##Usage
+## Usage
+
     autoPlay = {
         type:Boolean,
         required:false,
