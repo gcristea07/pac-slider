@@ -31,7 +31,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
     @ViewChild(SlideZoneDirective)
     private slideZone: SlideZoneDirective;
 
-    private slides: Array<CarouselItemComponent> = [];
+    public slides: Array<CarouselItemComponent> = [];
 
     private viewContainerRef: ViewContainerRef;
 
@@ -90,6 +90,20 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
     startAutoPlay() {
         this.pause = false;
+    }
+    x: number = 0;
+    startX: number = 0;
+    onPanStart(event) {
+        this.startX = this.x;
+    }
+
+    onPan(event) {
+        console.log(event);
+        event.preventDefault();
+        this.x = this.startX + event.deltaX;
+        this.carouselSlides.forEach((slide) => {
+            slide.stabilizes(this.x);
+        });
     }
 
     slideBack() {

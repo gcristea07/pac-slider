@@ -5,6 +5,7 @@ import {SlideZoneDirective} from './slide-zone.directive';
 import {CarouselItemComponent} from "./carousel-item.component";
 import {CarouselSlideComponent} from "./carousel-slide.component";
 import {RouterModule} from "@angular/router";
+import 'hammerjs';
 
 @NgModule({
     imports: [
