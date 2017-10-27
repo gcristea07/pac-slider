@@ -50,9 +50,10 @@
 
 }
 
-.carousel-container .arrow img {
-    width: 100%;
-    -webkit-order: 0;
+.carousel-container .arrow .arrow-wrapper {
+    /*width: 100%;*/
+	cursor: pointer;
+	-webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
     -webkit-flex: 0 1 auto;
@@ -64,33 +65,42 @@
 }
 
 .carousel-container .left-arrow {
-    -webkit-transition: all .6s ease-out;
-    -moz-transition: all .6s ease-out;
-    -o-transition: all .6s ease-out;
-    transition: all .6s ease-out;
-    left: 0;
-    cursor: pointer;
+	left: 0;
 }
 
 .carousel-container .right-arrow {
-    right: 0;
-    cursor: pointer;
+	right: 0;
 }
 
-/*
-.carousel-container .left-arrow:hover {
-	background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* FF3.6-15 *!
-	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* Chrome10-25,Safari5.1-6 *!
-	background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=1); !* IE6-9 *!
+.carousel-container .arrow .arrow-wrapper #right-arrow{
+	height: 2vh;
+	width: 2vh;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-ms-transform-origin: 20% 40%; /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	-webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+	transform: rotate(45deg);
+	transform-origin: 20% 40%;
+	border-right: 2px solid #ffffff;
+	border-top: 2px solid #ffffff;
 }
 
-.carousel-container .right-arrow:hover {
-	background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); !* FF3.6-15 *!
-	background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); !* Chrome10-25,Safari5.1-6 *!
-	background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=1); !* IE6-9 *!
-}*/
+.carousel-container .arrow .arrow-wrapper #left-arrow{
+	height: 2vh;
+	width: 2vh;
+	-ms-transform: rotate(45deg); /* IE 9 */
+	-ms-transform-origin: 20% 40%; /* IE 9 */
+	-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+	-webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+	transform: rotate(45deg);
+	transform-origin: 20% 40%;
+	border-left: 2px solid #ffffff;
+	border-bottom: 2px solid #ffffff;
+}
+
+
+
+
 
 .carousel-container .dots-container {
     z-index: 2;
