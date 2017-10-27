@@ -22,3 +22,4 @@ Angular 2/4 responsive carousel
 </pac-slider>
 ```
 
+
