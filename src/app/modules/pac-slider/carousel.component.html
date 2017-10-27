@@ -14,7 +14,6 @@
     <div class="dots-container">
         <ul (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()">
             <li *ngFor="let dot of slides;let i = index;" (click)="slideToIndex(i)" [ngClass]="{selected: i == index}">
-                <img src="assets/img/buttons/dot.svg" alt="dot">
             </li>
         </ul>
     </div>
