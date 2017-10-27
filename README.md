@@ -1,17 +1,21 @@
-# PAC-Slider #
+<p align="center">
+    <h3 align="center">PAC-Slider</h3>
+  <p align="center">
+    Beautiful and easy to install Angular 2/4 responsive carousel slider
+    <br>
+    <a href=""><strong>Exemple »</strong></a>
+  </p>
+</p>
+<br>
+
 
 ## Table of contents
-* [Quick Start](#quick-start)
 * [Install](##install)
 * [Usage](#usage)
-* [Creator](#creators)
+* [Creators](#creators)
+* [Copyright and license](#copyright-and-license)
 
-
-##Quick Start
-
-
-
-##Install
+## Install
 
 Quick download methods available: 
 
@@ -21,7 +25,7 @@ Quick download methods available:
 
 ##Usage
     autoPlay = {
-        type:Boolean,
+        type:boolean,
         required:false,
         default:true
     }
@@ -34,7 +38,7 @@ Quick download methods available:
      
 ```html
 <pac-slider [autoPlay]="true" [time]="4">
-    <pac-item [src]="'http://site.com/photo.jpg'" [route]="'/contact'" [link]="'http://com.link'"></pac-item>
+    <pac-item [src]="'http://exemple.com/photo.jpg'" [route]="'/contact'" [link]="'http://exemple.com'"></pac-item>
 </pac-slider>
 ```
 
