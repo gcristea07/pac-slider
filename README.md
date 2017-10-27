@@ -4,7 +4,7 @@
 * [Quick Start](#quick-start)
 * [Install](##install)
 * [Usage](#usage)
-* [Creator](#creator)
+* [Creator](#creators)
 
 
 ##Quick Start
@@ -23,7 +23,7 @@ Quick download methods available:
 
 
 
-## Creator
+## Creators
 
 **Gabriel Cristea**
 - <https://github.com/gcristea07>
