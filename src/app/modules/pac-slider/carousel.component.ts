@@ -5,8 +5,6 @@ import {
 import {CarouselItemComponent} from "./carousel-item.component";
 import {SlideZoneDirective} from "./slide-zone.directive";
 import {CarouselSlideComponent} from "./carousel-slide.component";
-import {Location} from "@angular/common";
-import {Router} from "@angular/router";
 
 const STATE_AVAILABLE = 'available';
 const STATE_IDLE = 'idle';
@@ -42,12 +40,11 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
     private state = STATE_AVAILABLE;
     private lastOffset = 0;
+    private index = 0;
     private interval;
     private pause;
 
-    constructor(private componentFactoryResolver: ComponentFactoryResolver,
-                private test: ViewContainerRef) {
-        console.log(test);
+    constructor(private componentFactoryResolver: ComponentFactoryResolver) {
     }
 
     ngAfterContentInit() {
@@ -103,15 +100,19 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
             this.viewContainerRef.move(ref, 0);
             this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
             this.carouselSlides.forEach((slide) => {
-                slide.stabilizes(this.lastOffset)
+                slide.stabilizes(this.lastOffset);
             });
             this.lastOffset += this.sliderContainer.nativeElement.getBoundingClientRect().width;
             this.carouselSlides.forEach((slide) => {
-                slide.slide(this.lastOffset)
+                slide.slide(this.lastOffset);
             });
 
             setTimeout(() => {
                 this.state = STATE_AVAILABLE;
+                this.index--;
+                if (this.index < 0) {
+                    this.index = this.slides.length - 1;
+                }
             }, 720);
             setTimeout(() => {
                 this.pause = false;
@@ -122,11 +123,12 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
     slideForward() {
         if (this.state === STATE_AVAILABLE) {
+
             this.state = STATE_IDLE;
 
             this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
             this.carouselSlides.forEach((slide) => {
-                slide.slide(this.lastOffset)
+                slide.slide(this.lastOffset);
             });
 
             setTimeout(() => {
@@ -134,11 +136,23 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
                 this.viewContainerRef.move(ref, this.carouselSlides.length - 1);
                 this.lastOffset = 0;
                 this.carouselSlides.forEach((slide) => {
-                    slide.stabilizes(this.lastOffset)
+                    slide.stabilizes(this.lastOffset);
                 });
                 this.state = STATE_AVAILABLE;
+                this.index++;
+                if (this.index > this.slides.length - 1) {
+                    this.index = 0;
+                }
             }, 720);
         }
 
+    }
+
+    slideToIndex(index) {
+        if (index > this.index) {
+            this.slideForward();
+        } else if (index < this.index) {
+            this.slideBack();
+        }
     }
 }

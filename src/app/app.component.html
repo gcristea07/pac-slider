@@ -1,10 +1,5 @@
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->
 
-<pac-slider [autoPlay]="true" [time]="4">
-    <!--<pac-item [src]="'assets/img/slider/pac-slider-image-1.jpg'"></pac-item>-->
-    <!--<pac-item [src]="'assets/img/slider/pac-slider-image-2.jpg'"></pac-item>-->
-    <!--<pac-item [src]="'assets/img/slider/pac-slider-image-3.jpg'"></pac-item>-->
-    <pac-item [src]="'assets/img/slider/pac-slider-image-4.jpg'"></pac-item>
-    <!--<pac-item [src]="'assets/img/slider/pac-slider-image-5.jpg'"></pac-item>-->
-    <pac-item [src]="'assets/img/slider/pac-slider-image-6.jpg'"></pac-item>
+<pac-slider [autoPlay]="false" [time]="4">
+    <pac-item *ngFor="let photo of photos" [src]="photo.src"></pac-item>
 </pac-slider>

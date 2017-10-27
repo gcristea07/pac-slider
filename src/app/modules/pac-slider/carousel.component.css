@@ -1,80 +1,82 @@
 .carousel-container {
-	width: 100%;
-	overflow: hidden;
-	position: relative;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
 
 }
 
 .images-container {
-	width: 100%;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-justify-content: flex-start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	transition: all 300ms cubic-bezier(0.35, 0, 0.25, 1);
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    transition: all 300ms cubic-bezier(0.35, 0, 0.25, 1);
 }
 
 .carousel-container .arrow {
-	z-index: 2;
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 4%;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-flex-wrap: nowrap;
-	-ms-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-align-content: stretch;
-	-ms-flex-line-pack: stretch;
-	align-content: stretch;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 
 }
 
 .carousel-container .arrow img {
-	width: 100%;
-	-webkit-order: 0;
-	-ms-flex-order: 0;
-	order: 0;
-	-webkit-flex: 0 1 auto;
-	-ms-flex: 0 1 auto;
-	flex: 0 1 auto;
-	-webkit-align-self: auto;
-	-ms-flex-item-align: auto;
-	align-self: auto;
+    width: 100%;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
 }
 
 .carousel-container .left-arrow {
-	-webkit-transition: all .6s ease-out;
-	-moz-transition: all .6s ease-out;
-	-o-transition: all .6s ease-out;
-	transition: all .6s ease-out;
-	left: 0;
-	cursor: pointer;
+    -webkit-transition: all .6s ease-out;
+    -moz-transition: all .6s ease-out;
+    -o-transition: all .6s ease-out;
+    transition: all .6s ease-out;
+    left: 0;
+    cursor: pointer;
 }
 
 .carousel-container .right-arrow {
-	right: 0;
-	cursor: pointer;
+    right: 0;
+    cursor: pointer;
 }
+
 /*
 .carousel-container .left-arrow:hover {
 	background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); !* FF3.6-15 *!
@@ -91,63 +93,50 @@
 }*/
 
 .carousel-container .dots-container {
-	z-index: 2;
-	position: absolute;
-	bottom: 0;
-	height: 10%;
-	width: 100%;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-flex-wrap: nowrap;
-	-ms-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-align-content: stretch;
-	-ms-flex-line-pack: stretch;
-	align-content: stretch;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .carousel-container .dots-container ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .carousel-container .dots-container ul li {
-	display: inline;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    background: #fff;
+    border-radius: 100%;
+    margin: 5px;
+    display: inline-table;
+    opacity: .5;
+
 }
 
-.carousel-container .dots-container ul li img {
-	width: 10px;
-	padding: 5px;
-}
-
-.carousel-container .dots-container img {
-	cursor: pointer;
-	height: 10%;
-	width: 100%;
-	-webkit-order: 0;
-	-ms-flex-order: 0;
-	order: 0;
-	-webkit-flex: 0 1 auto;
-	-ms-flex: 0 1 auto;
-	flex: 0 1 auto;
-	-webkit-align-self: auto;
-	-ms-flex-item-align: auto;
-	align-self: auto;
-}
-
-.carousel-container .dots-container img:hover {
-	opacity: 0.5;
-	transition: all .7s ease-out;
+.carousel-container .dots-container ul li.selected  {
+    opacity: 1;
 }

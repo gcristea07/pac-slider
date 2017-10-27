@@ -1,1 +1,1 @@
-export * from './src/app/modules/ng2-responsive-carousel/ng2-responsive-carousel.module';
+export * from './src/app/modules/pac-slider/pac-slider.module';
