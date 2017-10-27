@@ -1,23 +1,27 @@
 <div class="carousel-container" #sliderContainer>
-    <div class="arrow left-arrow" (click)="slideBack()" (mouseenter)="pauseAutoPlay()">
-        <img src="assets/img/buttons/arrow-left-v2.svg">
-    </div>
-    <div class="slides-zone" #slidesZone>
-        <ng-content></ng-content>
-        <div class="images-container" (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()" #slideImg>
-            <ng-template slideZone>
+	<div class="arrow left-arrow" (click)="slideBack()" (mouseenter)="pauseAutoPlay()">
+		<div class="arrow-wrapper">
+			<div id="left-arrow"></div>
+		</div>
+	</div>
+	<div class="slides-zone" #slidesZone>
+		<ng-content></ng-content>
+		<div class="images-container" (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()" #slideImg>
+			<ng-template slideZone>
 
-            </ng-template>
-        </div>
+			</ng-template>
+		</div>
 
-    </div>
-    <div class="dots-container">
-        <ul (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()">
-            <li *ngFor="let dot of slides;let i = index;" (click)="slideToIndex(i)" [ngClass]="{selected: i == index}">
-            </li>
-        </ul>
-    </div>
-    <div class="arrow right-arrow" (click)="slideForward()" (mouseenter)="pauseAutoPlay()">
-        <img src="assets/img/buttons/arrow-right-v2.svg">
-    </div>
+	</div>
+	<div class="dots-container">
+		<ul (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()">
+			<li *ngFor="let dot of slides;let i = index;" (click)="slideToIndex(i)" [ngClass]="{selected: i == index}">
+			</li>
+		</ul>
+	</div>
+	<div class="arrow right-arrow" (click)="slideForward()" (mouseenter)="pauseAutoPlay()">
+		<div class="arrow-wrapper">
+			<div id="right-arrow"></div>
+		</div>
+	</div>
 </div>
