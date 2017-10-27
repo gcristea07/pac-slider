@@ -20,7 +20,7 @@
 Quick download methods available: 
 
 - [ZIP Download.](https://github.com/gcristea07/pac-slider/archive/master.zip)
-- Clone the repo: `git clone https://github.com/twbs/bootstrap.git`
+- Clone the repo: `git clone https://github.com/gcristea07/pac-slider.git`
 - Install with [npm](https://www.npmjs.com/): `npm install pac-slider`
 
 ## Usage
