@@ -6,7 +6,13 @@
 	</div>
 	<div class="slides-zone" #slidesZone>
 		<ng-content></ng-content>
-		<div class="images-container" (mouseenter)="pauseAutoPlay()" (mouseleave)="startAutoPlay()" #slideImg>
+		<div class="images-container"
+			 (mouseenter)="pauseAutoPlay()"
+			 (mouseleave)="startAutoPlay()"
+			 (panstart)="onPanStart($event)"
+			 (panmove)="onPan($event)"
+			 (panend)="onPanEnd($event)"
+			 #slideImg>
 			<ng-template slideZone>
 
 			</ng-template>

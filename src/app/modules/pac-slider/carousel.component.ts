@@ -92,6 +92,34 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
         this.pause = false;
     }
 
+    x: number = 0;
+    startX: number = 0;
+
+    onPanStart(event: any): void {
+        event.preventDefault();
+        this.startX = this.x;
+    }
+
+    onPan(event: any): void {
+        event.preventDefault();
+        this.x = this.startX + event.deltaX;
+        if (this.state === STATE_AVAILABLE) {
+            this.carouselSlides.forEach((slide) => {
+                slide.stabilizes(this.x);
+            });
+        }
+    }
+
+    onPanEnd(event: any) {
+        if (this.x < 0) {
+            this.slideForward();
+        } else {
+            this.slideBack();
+        }
+        this.x = 0;
+    }
+
+
     slideBack() {
         if (this.state === STATE_AVAILABLE) {
             this.state = STATE_IDLE;

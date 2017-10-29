@@ -14,7 +14,6 @@ export class CarouselSlideComponent {
     constructor(private el: ElementRef, private renderer: Renderer2) {
     }
 
-
     slide(offset) {
         this.renderer.addClass(this.el.nativeElement, 'delay');
         this.renderer.setStyle(this.el.nativeElement, 'transform', 'translate3d(' + offset + 'px, 0, 0)');

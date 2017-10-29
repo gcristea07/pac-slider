@@ -7,6 +7,9 @@ import {AppComponent} from './app.component';
 import {RouterModule, Routes} from "@angular/router";
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
+import 'hammerjs';
+import 'hammer-timejs';
+
 
 const appRoutes: Routes = [
     { path: '', component:Page1Component  },
