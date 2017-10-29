@@ -15,7 +15,6 @@ export class CarouselSlideComponent {
     }
 
     slide(offset, deleyPercent = null) {
-        console.log(deleyPercent);
         // if (deleyPercent != null) {
         //     this.renderer.setStyle(this.el.nativeElement,
         //         'transition', 'transform 0.' + Math.floor(deleyPercent / 100 * 7) + 's ease-in-out');

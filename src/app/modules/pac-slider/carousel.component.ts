@@ -100,7 +100,6 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
     @HostListener('window:resize', ['$event'])
     onResize(event) {
         this.lastOffset = 0 - this.sliderContainer.nativeElement.getBoundingClientRect().width;
-        console.log(this.lastOffset);
         this.carouselSlides.forEach((slide) => {
             slide.stabilizes(this.lastOffset);
         });
