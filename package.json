@@ -1,12 +1,22 @@
 {
   "name": "pac-slider",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "MIT",
   "author": "Cristea Ilie Gabriel",
   "repository": {
     "type": "git",
     "url": "https://github.com/gcristea07/pac-slider.git"
   },
+  "keywords": [
+    "angular2",
+    "angular4",
+    "carousel",
+    "slider",
+    "pac-slider",
+    "responsive",
+    "responsive-carousel",
+    "module"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
