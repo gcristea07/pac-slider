@@ -25,6 +25,7 @@
     -moz-transition: transform .7s ease-in-out;
     -o-transition: transform .7s ease-in-out;
     transition: transform .7s ease-in-out;
+
 }
 
 .image-overlay {
