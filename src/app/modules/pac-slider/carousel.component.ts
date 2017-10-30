@@ -198,9 +198,68 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
     // TODO: Fix slide to index method
     slideToIndex(index) {
         if (index > this.index) {
-            this.slideForward();
+            console.log("Index:");
+            console.log(index);
+            console.log("This index:");
+            console.log(this.index);
+
+            if (this.state === STATE_AVAILABLE) {
+                this.state = STATE_IDLE;
+                this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
+                this.carouselSlides.forEach((slide) => {
+                    slide.slide(this.lastOffset);
+                });
+                setTimeout(() => {
+                    let ref = this.viewContainerRef.get(this.index);
+
+                    this.viewContainerRef.move(ref, this.carouselSlides.length - 1);
+                    this.lastOffset = 0 - this.sliderContainer.nativeElement.getBoundingClientRect().width;
+                    this.carouselSlides.forEach((slide) => {
+                        slide.stabilizes(this.lastOffset);
+                    });
+                    this.state = STATE_AVAILABLE;
+                    this.index++;
+                    if (this.index > this.slides.length - 1) {
+                        this.index = 0;
+                    }
+                }, 720);
+            }
         } else if (index < this.index) {
-            this.slideBack();
+            console.log("Index:");
+            console.log(index);
+            console.log("This index:");
+            console.log(this.index);
+
+            if (this.state === STATE_AVAILABLE) {
+                this.state = STATE_IDLE;
+                this.lastOffset += this.sliderContainer.nativeElement.getBoundingClientRect().width;
+                this.carouselSlides.forEach((slide) => {
+                    slide.slide(this.lastOffset);
+                });
+                setTimeout(() => {
+                    let ref = this.viewContainerRef.get(this.carouselSlides.length - 1);
+                    this.viewContainerRef.move(ref, 0);
+                    this.lastOffset -= this.sliderContainer.nativeElement.getBoundingClientRect().width;
+                    this.carouselSlides.forEach((slide) => {
+                        slide.stabilizes(this.lastOffset);
+                    });
+                    this.state = STATE_AVAILABLE;
+                    this.index--;
+                    if (this.index < 0) {
+                        this.index = this.slides.length - 1;
+                    }
+                }, 720);
+                setTimeout(() => {
+                    this.pause = false;
+                }, this.time * 1000);
+            }
         }
+
+
+        // if (index > this.index) {
+        //     this.slideForward();
+        // } else if (index < this.index) {
+        //     this.slideBack();
+        // }
     }
 }
