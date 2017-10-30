@@ -1,13 +1,8 @@
-<p align="center">
-    <h1 align="center">PAC-Slider</h3>
-  <p align="center">
-    Beautiful and easy to install Angular 2/4 responsive carousel slider
-    <br>
-    <a href="https://opensource.mountsoftware.ro/"><strong>Exemple »</strong></a>
-  </p>
-</p>
-<br>
+![Pac-Slider](https://opensource.mountsoftware.ro/preview-images/pac-logo.png)
 
+Beautiful and easy to install Angular 2/4 responsive carousel slider
+
+<a href="https://opensource.mountsoftware.ro/"><strong>Exemple »</strong></a>
 
 ## Table of contents
 * [Install](#install)
