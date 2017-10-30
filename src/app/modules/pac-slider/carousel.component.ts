@@ -195,6 +195,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
     }
 
+    // TODO: Fix slide to index method
     slideToIndex(index) {
         if (index > this.index) {
             this.slideForward();
