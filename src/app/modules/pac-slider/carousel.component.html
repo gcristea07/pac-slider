@@ -1,44 +1,44 @@
 <div class="carousel-container" #sliderContainer>
 
-	<!-- Left Arrow Container -->
-	<div class="arrows-wrapper left-arrow-wrapper"
-	     (click)="slideBack()"
-	     (mouseenter)="pauseAutoPlay()">
-		<div class="left-arrow"></div>
-	</div>
+    <!-- Left Arrow Container -->
+    <div class="arrows-wrapper left-arrow-wrapper"
+         (click)="slideBack()"
+         (mouseenter)="pauseAutoPlay()">
+        <div class="left-arrow"></div>
+    </div>
 
-	<!-- Slider Zone -->
-	<div class="slides-zone" #slidesZone>
-		<ng-content></ng-content>
-		<div class="images-container"
-		     (mouseenter)="pauseAutoPlay()"
-		     (mouseleave)="startAutoPlay()"
-		     (panstart)="onPanStart($event)"
-		     (panmove)="onPan($event)"
-		     (panend)="onPanEnd()"
-		     #slideImg>
-			<ng-template slideZone>
+    <!-- Slider Zone -->
+    <div class="slides-zone" #slidesZone>
+        <ng-content></ng-content>
+        <div class="images-container"
+             (mouseenter)="pauseAutoPlay()"
+             (mouseleave)="startAutoPlay()"
+             (panstart)="onPanStart($event)"
+             (panmove)="onPan($event)"
+             (panend)="onPanEnd()"
+             #slideImg>
+            <ng-template slideZone>
 
-			</ng-template>
-		</div>
-	</div>
+            </ng-template>
+        </div>
+    </div>
 
-	<!-- Dots Container -->
-	<div class="dots-container">
-		<ul (mouseenter)="pauseAutoPlay()"
-		    (mouseleave)="startAutoPlay()">
-			<li *ngFor="let dot of slides;let i = index;"
-			    (click)="slideToIndex(i)"
-			    [ngClass]="{selected: i == index}">
-			</li>
-		</ul>
-	</div>
+    <!-- Dots Container -->
+    <div class="dots-container">
+        <ul (mouseenter)="pauseAutoPlay()"
+            (mouseleave)="startAutoPlay()">
+            <li *ngFor="let dot of slides;let i = index;"
+                (click)="slideToIndex(i)"
+                [ngClass]="{selected: i == index}">
+            </li>
+        </ul>
+    </div>
 
-	<!-- Right Arrow Container -->
-	<div class="arrows-wrapper right-arrow-wrapper"
-	     (click)="slideForward()"
-	     (mouseenter)="pauseAutoPlay()">
-		<div class="right-arrow"></div>
-	</div>
+    <!-- Right Arrow Container -->
+    <div class="arrows-wrapper right-arrow-wrapper"
+         (click)="slideForward()"
+         (mouseenter)="pauseAutoPlay()">
+        <div class="right-arrow"></div>
+    </div>
 
 </div>
