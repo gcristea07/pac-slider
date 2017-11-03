@@ -25,5 +25,13 @@
     -moz-transition: transform .7s ease-in-out;
     -o-transition: transform .7s ease-in-out;
     transition: transform .7s ease-in-out;
-    /*by nea adi*/
+
+}
+
+.image-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }

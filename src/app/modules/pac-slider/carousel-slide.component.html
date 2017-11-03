@@ -1,12 +1,12 @@
 <ng-container *ngIf="!route ">
     <a [href]="link?link:'#'">
-        <img [src]="src">
+        <img [src]="src" draggable="false">
     </a>
 </ng-container>
 
 <ng-container *ngIf="route">
     <a [routerLink]="route">
-        <img [src]="src">
+        <img [src]="src" draggable="false">
     </a>
 </ng-container>
-
+<div class="image-overlay"></div>

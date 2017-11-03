@@ -6,6 +6,7 @@ import {CarouselItemComponent} from "./carousel-item.component";
 import {CarouselSlideComponent} from "./carousel-slide.component";
 import {RouterModule} from "@angular/router";
 import 'hammerjs';
+import 'hammer-timejs';
 
 @NgModule({
     imports: [
