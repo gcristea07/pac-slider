@@ -1,10 +1,10 @@
 <div class="carousel-container" #sliderContainer>
 
     <!-- Left Arrow Container -->
-    <div class="arrows-wrapper left-arrow-wrapper"
+    <div class="arrow left-arrow"
          (click)="slideBack()"
          (mouseenter)="pauseAutoPlay()">
-        <div class="left-arrow"></div>
+        <div id="left-arrow"></div>
     </div>
 
     <!-- Slider Zone -->
@@ -35,10 +35,10 @@
     </div>
 
     <!-- Right Arrow Container -->
-    <div class="arrows-wrapper right-arrow-wrapper"
+    <div class="arrow right-arrow"
          (click)="slideForward()"
          (mouseenter)="pauseAutoPlay()">
-        <div class="right-arrow"></div>
+        <div id="right-arrow"></div>
     </div>
 
 </div>

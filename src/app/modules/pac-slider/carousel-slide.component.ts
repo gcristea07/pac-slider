@@ -3,7 +3,7 @@ import {Component, ElementRef, Input, Renderer2} from '@angular/core';
 @Component({
     selector: 'pac-carousel-slide',
     templateUrl: './carousel-slide.component.html',
-    styleUrls: ['./carousel-slide.component.css']
+    styleUrls: ['./carousel-slide.component.scss']
 })
 export class CarouselSlideComponent {
 

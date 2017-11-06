@@ -4,7 +4,7 @@ import {CarouselComponent} from "./carousel.component";
 @Component({
     selector: 'pac-item',
     templateUrl: './carousel-item.component.html',
-    styleUrls: ['./carousel-item.component.css']
+    styleUrls: ['./carousel-item.component.scss']
 })
 export class CarouselItemComponent implements OnInit, OnDestroy {
     @Input() src;
